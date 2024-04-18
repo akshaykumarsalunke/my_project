@@ -17,6 +17,15 @@ def suppress_logging(namespace):
     finally:
         logger.disabled = old_value
 
+def test_nb_dags():
+    '''
+    Verify Number of dags in /dags folder.
+    '''
+    dag_bag = DagBag(include_examples=False)
+    nb_dags = len(dag_bag.dags.items())
+    assert nb_dags == 2, "Wrong number of dags, {0} expected got {1}".format(2, nb_dags)
+    
+
 
 def get_import_errors():
     """
