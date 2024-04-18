@@ -7,16 +7,13 @@ on:
 
 env:
   ## Sets Deployment API key credentials as environment variables
-  ASTRONOMER_KEY_ID: ${{ secrets.ASTRONOMER_KEY_ID_DEV }}
-  ASTRONOMER_KEY_SECRET: ${{ secrets.ASTRONOMER_KEY_SECRET_DEV }}
+  ASTRO_API_TOKEN: ${{ secrets.ASTRO_API_TOKEN }}
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-    - name: checkout repo
-      uses: actions/checkout@v2.3.4
-    - name: Deploy to Astro
-      run: |
-        brew install astronomer/cloud/astrocloud
-        astrocloud deploy --pytest ${{ secrets.ASTRONOMER_DEPLOYMENT_ID_DEV }}
+    build:
+        runs-on: ubuntu-latest
+        steps:
+        - name: Deploy to Astro
+          uses: astronomer/deploy-action@v0.4
+          with:
+            deployment-id: ${{ secrets.ASTRONOMER_DEPLOYMENT_ID_DEV }}
