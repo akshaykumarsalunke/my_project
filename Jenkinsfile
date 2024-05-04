@@ -9,7 +9,7 @@ pipeline {
             }
             steps {
                 checkout scm
-                sh "env | sort"
+                sh "env | grep ASTRO"
             }
             steps {
                 checkout scm
