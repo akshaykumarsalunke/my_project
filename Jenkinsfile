@@ -12,7 +12,7 @@ pipeline {
                 sh '''
                 curl -LJO https://github.com/astronomer/astro-cli/releases/download/v1.26.0/astro_1.26.0_linux_amd64.tar.gz
                 tar -zxvf astro_1.26.0_linux_amd64.tar.gz astro && rm astro_1.26.0_linux_amd64.tar.gz
-                ./astro deploy ${ASTRONOMER_DEPLOYMENT_ID} -f
+                ./astro deploy ${env.ASTRONOMER_DEPLOYMENT_ID} -f
                 '''
             }
         }
