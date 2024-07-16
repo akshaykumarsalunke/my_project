@@ -26,7 +26,7 @@ def kpo_example():
         namespace="default",
         get_logs=True,
         log_events_on_failure=True,
-        is_delete_operator_pod=True,
+        is_delete_operator_pod=False,
         # make sure XComs are pushed
         do_xcom_push=True,
     )
