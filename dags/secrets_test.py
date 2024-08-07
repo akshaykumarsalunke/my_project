@@ -14,4 +14,6 @@ def secret_dag():
     secret_obj = SecretsManagerBackend()
     sec_client = secret_obj.client()
 
+  t1 = secret_task()
+
 dag_obj = secret_dag()
