@@ -1,6 +1,6 @@
 from airflow.decorators import dag, task
 from datetime import datetime
-from airflow.providers.amazon.aws.secrets.secrets_mananger import SecretsManagerBackend
+from airflow.providers.amazon.aws.secrets.secrets_manager import SecretsManagerBackend
 
 @dag(
   "secret_test",
