@@ -14,6 +14,8 @@ def secret_dag():
     secret_obj = SecretsManagerBackend()
     sec_client = secret_obj.client
     print(sec_client)
+    con_value = sec_client.get_conn_value(conn_id='my_db')
+    print(con_value)
 
   t1 = secret_task()
 
