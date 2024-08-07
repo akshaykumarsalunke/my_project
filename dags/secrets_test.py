@@ -12,7 +12,8 @@ def secret_dag():
   @task()
   def secret_task():
     secret_obj = SecretsManagerBackend()
-    sec_client = secret_obj.client()
+    sec_client = secret_obj.client
+    print(sec_client)
 
   t1 = secret_task()
 
