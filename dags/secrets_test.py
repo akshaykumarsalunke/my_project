@@ -10,7 +10,7 @@ from airflow.providers.amazon.aws.secrets.secret_mananger import SecretsManagerB
 )
 def secret_dag():
   @task()
-  def secret_task:
+  def secret_task():
     secret_obj = SecretsManagerBackend()
     sec_client = secret_obj.client()
 
