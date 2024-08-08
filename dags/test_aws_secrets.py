@@ -7,8 +7,8 @@ from airflow.operators.python import PythonOperator
 
 
 def print_var():
-    # my_var = Variable.get("my_var")
-    # print(f'My variable is: {my_var}')
+    my_var = Variable.get("my_var")
+    print(f'My variable is: {my_var}')
 
     conn = BaseHook.get_connection(conn_id="my_db")
     print(conn.get_uri())
