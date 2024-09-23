@@ -22,7 +22,7 @@ def check_user_availability_func(**context):
     start_date=datetime(2024,9,17),
     schedule=None,
     catchup=False,
-    tags=["sensor", "day1"],
+    tags=["sensor", "DayOne"],
 )
 def pythonsensor_example():
 

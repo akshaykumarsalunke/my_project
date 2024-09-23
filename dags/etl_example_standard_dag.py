@@ -1,12 +1,12 @@
 from airflow import DAG
 from airflow.operators.python import PythonOperator
-
+from airflow.models import Variable
 from pendulum import datetime
 import random
 import os
 
 # constants
-MY_LIMIT = os.environ['MY_ENV_VAR']
+MY_LIMIT = Variable.get('MY_ENV_VAR')
 
 def _extract(upper_limit, ti):
     """Picks a random number between 10 and the upper limit"""
@@ -39,7 +39,7 @@ with DAG(
     start_date=datetime(2024,9,17),
     schedule=None,
     catchup=False,
-    tags=["traditional", "day1"],
+    tags=["traditional", "DayOne"],
 ) as dag:
 
     extract = PythonOperator(

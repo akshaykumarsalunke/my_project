@@ -1,19 +1,19 @@
 from airflow import DAG
 from airflow.decorators import task
-
+from airflow.models import Variable
 from pendulum import datetime
 import random
 import os
 
 # constants
-MY_LIMIT = os.environ['MY_ENV_VAR']
+MY_LIMIT = Variable.get('MY_ENV_VAR')
 
 with DAG(
     dag_id="ETL_example_TaskFlowAPI_dag",
     start_date=datetime(2024,9,17),
     schedule=None,
     catchup=False,
-    tags=["taskflow", "day1"]
+    tags=["taskflow", "DayOne"]
 ) as dag:
 
     @task()
