@@ -17,7 +17,7 @@ import time
     tags=["dynamic"],
 )
 def max_active_tis_per_dagrun():
-    @task(max_active_tis_per_dagrun=2, max_active_tis_per_dag=5)
+    @task(max_active_tis_per_dag=5)
     def return_n(n):
         time.sleep(10)
         return n
