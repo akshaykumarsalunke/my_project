@@ -28,4 +28,4 @@ def kpo_example_internal():
         do_xcom_push=True,
     )
     kpo_task 
-kpo_example()
+kpo_example_internal()
